@@ -306,30 +306,6 @@ namespace B9PartSwitch
             CurrentSubtype.UpdateVolume();
         }
 
-        public override void OnWillBeCopied(bool asSymCounterpart)
-        {
-            base.OnWillBeCopied(asSymCounterpart);
-
-            foreach (PartSubtype subtype in InactiveSubtypes)
-            {
-                subtype.OnWillBeCopiedInactiveSubtype();
-            }
-
-            CurrentSubtype.OnWillBeCopiedActiveSubtype();
-        }
-
-        public override void OnWasCopied(PartModule copyPartModule, bool asSymCounterpart)
-        {
-            base.OnWasCopied(copyPartModule, asSymCounterpart);
-
-            foreach (PartSubtype subtype in InactiveSubtypes)
-            {
-                subtype.OnWasCopiedInactiveSubtype();
-            }
-
-            CurrentSubtype.OnWasCopiedActiveSubtype();
-        }
-
         #endregion
 
         #region Private Methods
